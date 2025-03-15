@@ -1,0 +1,22 @@
+1.讲作业
+
+2.lxml bs4
+lxml
+1.HTML语言是非常的有规律一门语言（div标签 class属性）
+nodename   选取此节点中所以子节点
+/             从当前节点选取直接子节点 *
+//           从当前节点选取子孙节点 *
+.            选取当前节点
+..           选取当前节点的父节点
+@         选取属性* (相同类别的一定是一样的)
+编码和解码要一一对应才能得到最后的数据
+第一步：etree.HTML(response.text)
+第二部：etree.tostring(html,encoding='utf-8')
+第三步：使用xpath语法直接从网页找数据 text()
+bs4 是一个python的HTML解析库
+bs4依赖解析器
+Python标准库      BeautifulSoup(res.text,"html.parser")
+lxml                       BeautifulSoup(res.text,"lxml")
+html5lib                 BeautifulSoup(res.text,"html5lib")
+第一步 ：BeautifulSoup(response.text,'html5lib')
+3.巧用爬虫

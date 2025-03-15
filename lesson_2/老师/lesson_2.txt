@@ -1,0 +1,52 @@
+进来的同学稍等一下 8点上课哟~
+回顾：
+
+1.网页基础
+1):我们爬到的数据和网页源代码不一样
+网页源代码：可能不真实
+网页现在代码：最真实的
+静态网页 ：将代码放到一台有服务器电脑上 速度快   维护性差
+动态网页：动态的修改参数  功能比静态网页要强大丰富很多
+浏览器：无状态的http
+会话：有始有终的一系列动作
+cookies：网站为了辨别用户身份，存储在用户本地终端上的数据
+代理：爬取数据很容易被封IP的（打开CMD输入ipconfig)
+代理服务器：代理网络用户去获取网络信息（网络信息中转站）
+作用：修改IP，访问内网
+           提高访问速度（DNS）缓存区
+           隐藏真实IP
+爬虫代理：在爬取的过程中不断更换代理 就不会被封锁了
+代理分类：
+1.根据协议区分
+2.匿名程度区分 a.高匿名  b.普通匿名 c.透明代理  d.间谍代理
+
+2.urllib
+request
+1.urlopen():模拟浏览器的请求发起过程 (第一步完成)
+属性直接点 方法带括号
+url=网站的链接
+time=设置超时间
+context=指定SSL设置
+cafile=指定CA证书
+capath=指定路径
+bytes将字符转成字节流
+2.parse（解析URL）
+1）urlparse():可实现URL的识别和分段
+    urlunparse()：合并URL
+2)urlsplit()将params这一部分加到path
+   urlunsplit()将链接各个部分组成完整链接传进去的长度必须为5
+3)urljoin():提供一个base_url做第一个参数，将新链接做第二个参数
+4)urlencode()构造get参数
+
+scheme:协议类型
+netloc:域名
+path:路径
+params=参数
+query=查询条件
+fragment=锚点
+error
+1.URLError
+robotparse
+robot.txt 君子协定
+
+3.shopee项目讲解

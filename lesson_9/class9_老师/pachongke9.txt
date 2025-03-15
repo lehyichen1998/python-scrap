@@ -1,0 +1,14 @@
+1.先讲作业
+
+2.selenium讲完
+课外内容：chromeOptions() 作用是添加谷歌浏览器的设置
+    查看设置chrome://version/
+    "--user-data-dir="+r"C:/Users/Administrator/AppData/Local/Google/Chrome/User Data/"
+    代码
+    option = webdriver.ChromeOptions()
+    option.add_argument("--user-data-dir="+r"C:/Users/Administrator/AppData/Local/Google/Chrome/User Data/")
+    browser = webdriver.Chrome(chrome_options=option,executable_path=r"E:\chromedriver\chromedriver.exe")
+实现拖拽动作
+execute_script('window.open()') 打开一个新的页面
+browser.switch_to_window(browser.window_handles[1])转到新的页面
+3.做一个完整的关于seleium

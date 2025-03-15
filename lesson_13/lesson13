@@ -1,0 +1,37 @@
+滑动验证码
+点触式验证码
+PIL这个库安装的时候pillow
+
+SCRAPY是目前python中使用最广泛的爬虫框架
+介绍：scrapy是一个基于Twister的异步处理框架，架构
+非常清晰，模块之间的耦合程度低，可扩展性强，灵活的
+完成各种需求。我们只需要定制开发几个模块就可以轻松
+实现一个爬虫
+
+Engine:引擎，整个系统的数据流的处理，触发事务是整个框架的核心
+Item Pipeline项目管道 清洗验证存储数据
+Scheduler：调度器，接受引擎发过来的请求并将其加入队列中，
+在引擎再次请求时将请求提供给引擎
+Downloader：下载器，下载网页的内容，并将网页内容返回给蜘蛛
+Spider：蜘蛛，定义了爬取的逻辑和网页的解析规则，它主要负责解析响应并
+生成结果和新的请求。
+Item 项目，它定义了爬取结果的数据结构，爬取的数据会被
+赋值成Item对象
+Downloader Middlewares 下载器中间件，位于下载器和引擎之间的钩子框架
+主要处理引擎与下载器之间的请求及响应。
+Spider Middlewares：蜘蛛中间件，位于引擎和蜘蛛之间的钩子框架，主要是处理
+向蜘蛛输入的响应和输出的结果以及新的请求
+
+数据流：
+(1)Engine首先打开一个网站，找到处理该网站的sipder，并向该Spider请
+求第一个要爬取的URL
+(2)Engine从SPider中获取到第一个要爬取的url 传到scheduler里面
+(3)Engine从Schedule请求到URL
+(4)Scheduler返回下一个要爬取的URL给Engine然后Engine给Downloader
+Middlewares 再给Downloader
+(5)页面下载完毕，Downloader生成Response----------Engine
+（6）Engine发Response给Spider Middlewares 再到Spider
+（7）Spider接收到Response 处理，返回提取到的Item和新的URL给engine
+(8)Engine把Item给Item pipeline 把新的URL给 Scheduler
+（9）重复第（2）到第（8）步知道Scheduler没有跟多的Request
+Engine关闭该网站 爬取结束。

@@ -1,0 +1,41 @@
+1.课堂作业
+
+2.文件存储(最后一步最重要的一步) 数据库mysql
+txt存储
+file=open('explore','a',encoding='utf-8')
+file.write('\n'.join(字符串))
+file.close()
+'r' 用只读的方式打开文件，文件的指针会放在文件的开头，默认方式
+'rb'用二进制只读的方式打开文件，文件的指针会放在文件的开头
+'w':用写入的方式打开一个文件，如果说该文件已经存在则将其覆盖
+，如果不存在就会创建此文件
+'wb'
+'a'用追加的方式打开一个文件如果文件已经存在那他在文件结尾接着写
+'ab'
+json
+对象：他在JavaScript是用大括号{}包裹起来的内容数据结构
+一般为{key:value,key1:value1。。。。} key用整数和字符串
+value用任意类型
+数组：在JavaScript是用中括号[]包含起来的内容 ["java","javascript"......]
+索引用的多 里面的元素可以是任意类型
+import json
+data=json.loads(text) 将字符串转化成json
+text=json.loads(data) 将json转化成字符串
+csv:
+import csv
+with open('文件名','方式','编码方式') as f:
+    writer=csv.writer(f)
+    writer.writerow([])
+    writer.writerow([])
+
+写入多行
+with open('文件名','方式','编码方式') as f:
+    writer=csv.writer(f)
+    writer.writerow([])
+    writer.writerows([],[],[])
+
+读取：
+with open('文件名','方式','编码方式') as f:
+    writer=csv.reader(f)
+    for row in reader:
+           print(row)
